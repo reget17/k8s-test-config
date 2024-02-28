@@ -1,17 +1,16 @@
 apiVersion: v1
 kind: Pod
-metadata: 
+metadata:
   name: short-app
-  label: 
+  labels:
     components: frontent # пара ключ/значение, может быть любыми
 spec:
-  containers: 
+  containers:
     - name: short-app
       image: antonlarichev/short-app
-      ports: 
+      ports:
         - containerPort: 80
-      resources: 
+      resources:
         limits:
-          memory: "128Mi"
-          cpu: "500m" # пол процессора
-      
+          memory: '128Mi'
+          cpu: '500m' # половина процессора

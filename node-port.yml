@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: short-app-port
+spec:
+  type: NodePort
+  ports:
+    - port: 3000 # по этому порту сам кластер будет подключаться (пока)
+      targetPort: 80 # containerPort in pod.yml
+      nodePort: 31200
+  selector:
+    components: frontent # label в pod.yml
